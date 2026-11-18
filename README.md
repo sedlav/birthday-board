@@ -1,10 +1,11 @@
 # birthday board
 
-A self-contained birthday and age tracker. Open `index.html` in a browser. Entries are saved in that browser; export the JSON data file to move the list to another device.
+A self-contained birthday and age tracker. The page reads the shared list from `people.json`.
+
+To update the family list, edit `people.json` and push the change to GitHub. Cloudflare Pages will redeploy, and everyone will see the updated list. Each entry has an `id`, `name`, and birthday `date` in `YYYY-MM-DD` format.
 
 ## deploy with cloudflare pages
 
-1. Create a GitHub repository named `birthday-board` and push this folder to its `main` branch.
-2. In Cloudflare, create a Pages project and connect the `birthday-board` repository.
-3. Choose **None** as the framework preset, leave the build command blank, and set the build output directory to `.`.
-4. Deploy. Cloudflare will publish `index.html` at the project's `pages.dev` address and rebuild on each push to `main`.
+1. Connect the `birthday-board` GitHub repository to Cloudflare Pages.
+2. Choose **None** for the framework preset, leave the build command blank, and set the build output directory to `.`.
+3. Cloudflare publishes `index.html` and `people.json`. Push changes to the `main` branch to update the shared page and list.
